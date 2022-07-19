@@ -80,8 +80,15 @@ public class baza {
 static public String[] popuniComboBox(){
      try {
          int i=0;
-         String[] data =  new String[50];
+         
          Connection connection = povezi_bazu();
+         
+         PreparedStatement st1 = connection
+                 .prepareStatement("SELECT COUNT(*) FROM kursevi");
+         ResultSet rs1 = st1.executeQuery();
+             rs1.next() ;
+             int br=rs1.getInt(1) ;
+         String[] data =  new String[br];
          
          PreparedStatement st = connection
                  .prepareStatement("SELECT ime FROM kursevi");
