@@ -271,6 +271,7 @@ public class mainFrame extends javax.swing.JFrame {
         jComboBox1.setModel(model);
         
         SwingUtilities.invokeLater(new Runnable(){
+        @Override
         public void run(){
             
                 jLabelnit.setText("Autor: Miroslav Sabo");  
